@@ -1,0 +1,4 @@
+/ARM64
+/.vs
+/SanboxCoding/ARM64
+*.vcxproj*
