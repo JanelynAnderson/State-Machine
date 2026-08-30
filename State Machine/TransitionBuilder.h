@@ -20,12 +20,11 @@ public:
 
 	TransitionBuilder(Passkey pk) {}
 
-	TransitionBuilder<StateBuilderType>& SetTargetState(StateEnumType _stateId) { stateId = stateId; }
+	TransitionBuilder<StateBuilderType>& SetTargetStateId(StateEnumType _stateId) { stateId = stateId; }
 	template<typename F>
-	TransitionBuilder<StateBuilderType>& OnTransition(F&& onTransitionFunc)
-	{
+	TransitionBuilder<StateBuilderType>& OnTransition(F&& _onTransitionFunc) { onTransitionFunc = _onTransitionFunc; }
 
-	}
 private:
 	StateEnumType stateId;
+	void(*onTransitionFunc)(gVars::type&, lVars::type&);
 };
